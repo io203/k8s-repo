@@ -60,6 +60,7 @@ k port-forward svc/nginx 8085:80
 ```
 curl -fsSL https://get.docker.com/ | sudo sh ; sudo usermod -a -G docker $USER
 
+//재기동없이 재접속하면 된다
 ```
 ---
 ## 6 install docker-compose 
