@@ -52,3 +52,15 @@ k port-forward svc/nginx 8085:80
 - http://httpbin.org/digest-auth/:qop/:user/:passwd HTTP - 다이제스트 인증에 도전합니다.
 - http://httpbin.org/stream/:n n–100 회선을 스트리밍합니다.
 - http://httpbin.org/delay/:n n–10 초 동안 응답이 지연됩니다.
+
+
+## 5 install docker 
+```
+curl -fsSL https://get.docker.com/ | sudo sh ; sudo usermod -a -G docker $USER
+
+```
+## 6 install docker-compose 
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose ; sudo chmod +x /usr/local/bin/docker-compose ; docker-compose version
+
+```
