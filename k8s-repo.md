@@ -7,6 +7,7 @@
 kubectl run dev-tools -it --rm --image saturn203/austine-devtools
 
 ```
+---
 ## 2. simple-api
 ```
 // with namespace : api
@@ -16,6 +17,7 @@ kubectl apply -f https://raw.githubusercontent.com/io203/k8s-repo/main/simple-ap
 kubectl apply -f https://raw.githubusercontent.com/io203/k8s-repo/main/simple-api/simple-api.yaml
 ```
 
+---
 ## 3. nginx
 ### with yaml
 ```
@@ -31,7 +33,7 @@ kubectl expose deploy nginx --port 80 --target-port=80 --type LoadBalancer
 k port-forward svc/nginx 8085:80 
 
 ```
-
+---
 ## 4. httpbin.org 사용
 - http://httpbin.org/ip Origin IP를 반환합니다.
 - http://httpbin.org/user-agent user-agent를 반환합니다.
@@ -53,12 +55,13 @@ k port-forward svc/nginx 8085:80
 - http://httpbin.org/stream/:n n–100 회선을 스트리밍합니다.
 - http://httpbin.org/delay/:n n–10 초 동안 응답이 지연됩니다.
 
-
+---
 ## 5 install docker 
 ```
 curl -fsSL https://get.docker.com/ | sudo sh ; sudo usermod -a -G docker $USER
 
 ```
+---
 ## 6 install docker-compose 
 ```
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose ; sudo chmod +x /usr/local/bin/docker-compose ; docker-compose version
