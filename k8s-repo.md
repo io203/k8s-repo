@@ -23,6 +23,8 @@ kubectl apply -f https://raw.githubusercontent.com/io203/k8s-repo/main/simple-ap
 ```
 kubectl apply -f  https://raw.githubusercontent.com/io203/k8s-repo/main/nginx/nginx.yaml
 
+kubectl apply -f  https://raw.githubusercontent.com/io203/k8s-repo/main/nginx/nginx-loadbalancer.yaml
+
 ```
 
 ### kubectl 
