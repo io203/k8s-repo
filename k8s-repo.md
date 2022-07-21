@@ -16,6 +16,10 @@ kubectl apply -f https://raw.githubusercontent.com/io203/k8s-repo/main/simple-ap
 kubectl apply -f https://raw.githubusercontent.com/io203/k8s-repo/main/simple-api/ns-api.yaml
 kubectl apply -f https://raw.githubusercontent.com/io203/k8s-repo/main/simple-api/simple-api.yaml
 
+//ingress 
+kubectl apply -f https://raw.githubusercontent.com/io203/k8s-repo/main/simple-api/ingress-simple-api.yaml
+
+
 endpoint : /api/hello, /api/simple , /api/version
 ```
 
