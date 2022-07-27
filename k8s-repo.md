@@ -29,10 +29,11 @@ endpoint : /api/hello, /api/simple , /api/version
 ```
 // with namespace : nginx
 kubectl apply -f  https://raw.githubusercontent.com/io203/k8s-repo/main/nginx/nginx-ns.yaml
+kubectl apply -n nginx -f  https://raw.githubusercontent.com/io203/k8s-repo/main/nginx/nginx-loadbalancer-ns.yaml
 
+
+kubectl create ns nginx
 kubectl apply -n nginx -f  https://raw.githubusercontent.com/io203/k8s-repo/main/nginx/nginx.yaml
-
-kubectl apply -n nginx -f  https://raw.githubusercontent.com/io203/k8s-repo/main/nginx/nginx-loadbalancer.yaml
 
 ```
 
