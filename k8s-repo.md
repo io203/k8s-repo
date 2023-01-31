@@ -43,7 +43,7 @@ kubectl apply -n nginx -f  https://raw.githubusercontent.com/io203/k8s-repo/main
 kubectl apply -n api -f  https://raw.githubusercontent.com/io203/k8s-repo/main/tools/sleep.yaml
 
 //확인
-k exec -it deploy/sleep -- curl -s https://jsonplaceholder.typicode.com/posts
+k -n api exec -it deploy/sleep -- curl -s https://jsonplaceholder.typicode.com/posts
 
 ```
 
