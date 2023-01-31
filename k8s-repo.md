@@ -37,7 +37,7 @@ kubectl apply -n nginx -f  https://raw.githubusercontent.com/io203/k8s-repo/main
 
 ```
 
-## 4. sleep pod 
+## 4. sleep pod (curl)
 ```
 //설치 
 kubectl apply -n api -f  https://raw.githubusercontent.com/io203/k8s-repo/main/tools/sleep.yaml
