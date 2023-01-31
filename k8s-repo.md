@@ -37,6 +37,16 @@ kubectl apply -n nginx -f  https://raw.githubusercontent.com/io203/k8s-repo/main
 
 ```
 
+## 4. sleep pod 
+```
+//설치 
+kubectl apply -n api -f  https://raw.githubusercontent.com/io203/k8s-repo/main/tools/sleep.yaml
+
+//확인
+k exec -it deploy/sleep -- curl -s https://jsonplaceholder.typicode.com/posts
+
+```
+
 ### kubectl 
 ```
 kubectl create deployment nginx --image=nginx 
