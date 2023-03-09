@@ -55,7 +55,7 @@ spec:
         path: "/"
         backend:
           service: 
-            name: redis-svc
+            name: nginx-svc
             port: 
               number: 80
 EOF
