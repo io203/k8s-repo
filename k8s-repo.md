@@ -36,6 +36,30 @@ kubectl create ns nginx
 kubectl apply -n nginx -f  https://raw.githubusercontent.com/io203/k8s-repo/main/nginx/nginx.yaml
 
 ```
+### ingress-nginx
+```
+cat <<EOF | kubectl apply -f - 
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  namespace: nginx
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: "nginx.192.168.0.118.sslip.io"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service: 
+            name: redis-svc
+            port: 
+              number: 80
+EOF
+```
 
 ## 4. sleep pod (curl)
 ```
