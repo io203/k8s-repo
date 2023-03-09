@@ -16,12 +16,38 @@ kubectl apply -f https://raw.githubusercontent.com/io203/k8s-repo/main/simple-ap
 kubectl apply -f https://raw.githubusercontent.com/io203/k8s-repo/main/simple-api/ns-api.yaml
 kubectl apply -f https://raw.githubusercontent.com/io203/k8s-repo/main/simple-api/simple-api.yaml
 
-//ingress 
+//ingress (simple-api.3.39.19.175.sslip.io)
 kubectl apply -f https://raw.githubusercontent.com/io203/k8s-repo/main/simple-api/ingress-simple-api.yaml
 
 
 endpoint : /api/hello, /api/simple , /api/version
 ```
+simple-api-ingress
+```
+cat <<EOF | kubectl apply -f -
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: simple-api-ingress
+  namespace: api
+  annotations:
+    kubernetes.io/ingress.class: nginx    
+spec:
+  rules:
+  - host: "simple-api.3.39.19.175.sslip.io"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service: 
+            name: simple-api-svc
+            port: 
+              number: 8080
+EOF
+
+```
+
 
 ---
 ## 3. nginx
