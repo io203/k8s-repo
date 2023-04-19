@@ -5,6 +5,8 @@ kind: Service
 metadata:
   name: simple-api-svc
   namespace: api
+  labels:
+    app: simple-api
 spec:
   selector:
     app: simple-api
