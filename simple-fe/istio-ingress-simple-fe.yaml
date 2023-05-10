@@ -1,0 +1,36 @@
+
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: simple-fe-gateway
+  namespace: fe 
+spec:
+  selector:
+    istio: ingressgateway # use istio default controller
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "dev.simple-fe.127.0.0.1.sslip.io"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: simple-fe-vs
+  namespace: fe 
+spec:
+  hosts:
+  - "dev.simple-fe.127.0.0.1.sslip.io"
+  gateways:
+  - simple-fe-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: simple-fe-svc
+        port:
+          number: 8080

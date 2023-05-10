@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: simple-fe-svc
+  namespace: fe
+spec:
+  selector:
+    app: simple-fe
+  
+  ports:
+  - protocol: TCP
+    name: http
+    port: 8080
+    targetPort: http
+
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-fe-deploy
+  namespace: fe    
+  
+  labels:
+    app: simple-fe
+    
+   
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: simple-fe
+  template:
+    metadata:
+      labels:
+        app: simple-fe     
+      
+
+    spec:
+      containers:
+        - name: simple-fe
+          image: saturn203/simple-fe:stable-2.0
+          ports:
+          - name: http
+            containerPort: 8080
+  
