@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: simple-fe
-          image: saturn203/simple-fe:stable-2.0
+          image: saturn203/simple-fe:stable-2.1
           ports:
           - name: http
             containerPort: 8080
