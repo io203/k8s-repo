@@ -8,7 +8,7 @@ kubectl run dev-tools -it --rm --image saturn203/austine-devtools
 
 ```
 ---
-## 2. simple-api
+## 2.1 simple-api
 ```
 // with namespace : api
 kubectl apply -f https://raw.githubusercontent.com/io203/k8s-repo/main/simple-api/simple-api-ns.yaml
@@ -48,6 +48,18 @@ EOF
 
 ```
 
+## 2.2 simple-fe
+```
+// with namespace : fe
+kubectl apply -f https://raw.githubusercontent.com/io203/k8s-repo/main/simple-fe/simple-fe-ns.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/io203/k8s-repo/main/simple-fe/ns-fe.yaml
+kubectl apply -f https://raw.githubusercontent.com/io203/k8s-repo/main/simple-fe/simple-fe.yaml
+
+//ingress (simple-api.3.39.19.175.sslip.io)
+kubectl apply -f https://raw.githubusercontent.com/io203/k8s-repo/main/simple-fe/ingress-simple-fe.yaml
+
+```
 
 ---
 ## 3. nginx
