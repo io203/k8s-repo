@@ -10,10 +10,12 @@ kubectl run dev-tools -it --rm --image saturn203/austine-devtools
 ---
 ## 2.1 simple-api
 ```
-// with namespace : api
+// simple-api + api-namespace 
 kubectl apply -f https://raw.githubusercontent.com/io203/k8s-repo/main/simple-api/simple-api-ns.yaml
 
+// api namespace 생성만 한다
 kubectl apply -f https://raw.githubusercontent.com/io203/k8s-repo/main/simple-api/ns-api.yaml
+// simple-api 만 생성 ( namespace는 api로 할당되어 있다 )
 kubectl apply -f https://raw.githubusercontent.com/io203/k8s-repo/main/simple-api/simple-api.yaml
 
 //ingress (simple-api.3.39.19.175.sslip.io)
