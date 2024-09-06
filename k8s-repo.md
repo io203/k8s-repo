@@ -4,8 +4,11 @@
 
 ## 1. dev-tools
 ```
-kubectl run dev-tools -it --rm --image saturn203/austine-devtools
+kubectl run curl -it --rm --image curlimages/curl -- sh
 
+
+kubectl run dev-tools -it --rm --image saturn203/austine-devtools
+https://github.com/io203/k8s-repo/blob/main/k8s-repo.md
 ```
 ---
 ## 2.1 simple-api
