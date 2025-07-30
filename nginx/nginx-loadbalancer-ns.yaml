@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: quay.io/bitnami/nginx
+        image: gcr.io/google-containers/nginx
         ports:
         - name: http
           containerPort: 80
