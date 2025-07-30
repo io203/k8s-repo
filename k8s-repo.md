@@ -86,12 +86,11 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nginx-ingress
-  namespace: nginx
-  annotations:
-    kubernetes.io/ingress.class: nginx
+  namespace: nginx  
 spec:
+  ingressClassName: "nginx"
   rules:
-  - host: "nginx.192.168.0.118.sslip.io"
+  - host: "nginx.192.168.41.34.sslip.io"
     http:
       paths:
       - pathType: Prefix
