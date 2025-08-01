@@ -35,9 +35,8 @@ kind: Ingress
 metadata:
   name: simple-api-ingress
   namespace: api
-  annotations:
-    kubernetes.io/ingress.class: nginx    
 spec:
+  ingressClassName: "nginx"
   rules:
   - host: "simple-api.3.39.19.175.sslip.io"
     http:
