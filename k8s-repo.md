@@ -191,4 +191,6 @@ exec $SHELL
 ```
 ```sh
 mise run dev
+
+wget https://raw.githubusercontent.com/io203/k8s-repo/refs/heads/main/tools/mise.toml
 ```
