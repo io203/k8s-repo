@@ -161,3 +161,31 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
 ```
 curl https://jsonplaceholder.typicode.com/posts
 ```
+
+## mise.toml
+```toml
+[tools]
+python = "3.12.9"
+
+[tasks.dev]
+description = "Enter development environment"
+run = '''
+if [ ! -d ".venv" ]; then
+    echo "Creating virtual environment..."
+    python -m venv .venv
+fi
+
+echo "Activating virtual environment..."
+source .venv/bin/activate
+
+# 프롬프트 확실히 설정
+export VIRTUAL_ENV_DISABLE_PROMPT=0
+
+# 가상환경 활성화 확인
+echo "Virtual environment activated: $(basename $VIRTUAL_ENV)"
+echo "Python path: $(which python)"
+
+# 새 쉘 시작
+exec $SHELL
+'''
+```
