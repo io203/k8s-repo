@@ -189,3 +189,6 @@ echo "Python path: $(which python)"
 exec $SHELL
 '''
 ```
+```sh
+mise run dev
+```
