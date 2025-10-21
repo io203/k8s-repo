@@ -9,6 +9,7 @@ kubectl run curl -it --rm --image curlimages/curl -- sh
 
 kubectl run dev-tools -it --rm --image saturn203/austine-devtools
 kubectl apply -f https://raw.githubusercontent.com/io203/k8s-repo/main/tools/austine-devtools.yaml
+[curl,git, wget, redis-cli, kafkacat,telnet]
 
 ```
 ---
