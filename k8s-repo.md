@@ -1,6 +1,6 @@
 
 # k8s-repo
-
+https://github.com/io203/k8s-repo/blob/main/k8s-repo.md
 
 ## 1. dev-tools
 ```
@@ -8,7 +8,8 @@ kubectl run curl -it --rm --image curlimages/curl -- sh
 
 
 kubectl run dev-tools -it --rm --image saturn203/austine-devtools
-https://github.com/io203/k8s-repo/blob/main/k8s-repo.md
+kubectl apply -f https://raw.githubusercontent.com/io203/k8s-repo/main/tools/austine-devtools.yaml
+
 ```
 ---
 ## 2.1 simple-api
