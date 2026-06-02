@@ -124,6 +124,7 @@ k port-forward svc/nginx 8085:80
 ```
 ---
 ## 4. httpbin.org 사용
+- swagger (oepapi용 3): https://raw.githubusercontent.com/io203/k8s-repo/refs/heads/main/apis/httpbinorg.yaml
 - http://httpbin.org/ip Origin IP를 반환합니다.
 - http://httpbin.org/user-agent user-agent를 반환합니다.
 - http://httpbin.org/headers 헤더 dict를 반환합니다.
